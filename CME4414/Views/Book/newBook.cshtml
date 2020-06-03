@@ -1,0 +1,41 @@
+﻿@model CME4414.Models.Book
+@{
+    ViewBag.Title = "newBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <form class="form-group" method="post">
+        <div>
+            <label>Book Name</label><input type="text" class="form-control" name="BookName" />
+        </div>
+        <div>
+            <label>Genre</label><input type="text" class="form-control" name="Genre" />
+        </div>
+        <div>
+            <label>Author Name</label>
+            @Html.DropDownListFor(m => m.Writer.WriterID, (List<SelectListItem>)ViewBag.varWri, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Publisher Name</label>
+            @Html.DropDownListFor(m => m.Publisher.PublisherID, (List<SelectListItem>)ViewBag.varPub, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Release Date</label><input type="date" class="form-control" name="ReleaseDate" />
+        </div>
+        <div>
+            <label>Page No</label><input type="number" class="form-control" name="PageNumber" />
+        </div>
+        <div>
+            <label>Description</label><input type="text" class="form-control" name="Description" />
+        </div>
+        <div>
+            <label>Donator Name</label>
+            @Html.DropDownListFor(m => m.User.UserID, (List<SelectListItem>)ViewBag.varUsr, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Image Link</label><input type="text" class="form-control" name="Img_Link" />
+        </div>
+
+        <div><button class="btn btn-info">Add Book</button></div>
+    </form>
+

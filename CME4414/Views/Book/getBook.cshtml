@@ -1,0 +1,43 @@
+﻿@model CME4414.Models.Book
+@{
+    ViewBag.Title = "getBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Book", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookID)
+        @Html.TextBoxFor(m => m.BookID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.BookName)
+        @Html.TextBoxFor(m => m.BookName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Genre)
+        @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.WriterID)
+        @Html.DropDownListFor(m => m.Writer.WriterID, (List<SelectListItem>)ViewBag.varWri, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.PublisherID)
+        @Html.DropDownListFor(m => m.Publisher.PublisherID, (List<SelectListItem>)ViewBag.varPub, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ReleaseDate)
+        @Html.TextBoxFor(m => m.ReleaseDate, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.PageNumber)
+        @Html.TextBoxFor(m => m.PageNumber, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Description)
+        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Img_Link)
+        @Html.TextBoxFor(m => m.Img_Link, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.DonatorID)
+        @Html.DropDownListFor(m => m.User.UserID, (List<SelectListItem>)ViewBag.varUsr, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Update Book</button>
+    </div>
+}

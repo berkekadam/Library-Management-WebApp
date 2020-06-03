@@ -1,0 +1,25 @@
+﻿@model CME4414.Models.Borrow
+@{
+    ViewBag.Title = "newBorrow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <form class="form-group" method="post">
+        <div>
+            <label>Borrower Name</label>
+            @Html.DropDownListFor(m => m.User.UserID, (List<SelectListItem>)ViewBag.varUsr, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Borrowed Book Name</label>
+            @Html.DropDownListFor(m => m.Book.BookID, (List<SelectListItem>)ViewBag.varBook, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Borrow Date</label><input type="date" class="form-control" name="BorrowDate" />
+        </div>
+        <div>
+            <label>Read Situation</label><input type="text" class="form-control" name="IsRead" />
+        </div>
+
+        <div><button class="btn btn-info">Add Borrow</button></div>
+    </form>
+

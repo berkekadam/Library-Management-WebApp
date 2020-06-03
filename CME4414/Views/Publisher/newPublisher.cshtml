@@ -1,0 +1,15 @@
+﻿@model CME4414.Models.Publisher
+@{
+    ViewBag.Title = "newPublisher";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <form class="form-group" method="post">
+        <div>
+            <label>Publisher Name</label>
+            @Html.TextBoxFor(m => m.PublisherName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PublisherName, "", new { @style = "color:red" })
+        </div>
+        <div><button class="btn btn-info">Add Publisher</button></div>
+    </form>
+

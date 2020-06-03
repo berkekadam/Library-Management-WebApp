@@ -1,0 +1,26 @@
+﻿@using CME4414.Models;
+@model List<Publisher>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Publisher ID</th>
+        <th>Publisher Name</th>
+    </tr>
+    <tbody>
+        @foreach (var publisher in Model)
+        {
+            <tr>
+                <td>@publisher.PublisherID</td>
+                <td>@publisher.PublisherName</td>
+                <td><a href="/Publisher/getPublisher/@publisher.PublisherID" class="btn btn-success">UPDATE</a></td>
+                <td><a href="/Publisher/Delete/@publisher.PublisherID" class="btn btn-danger">DELETE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Publisher/newPublisher/" class="btn btn-primary">Add Publisher</a>
+

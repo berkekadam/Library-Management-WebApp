@@ -1,0 +1,20 @@
+﻿@model CME4414.Models.Writer
+@{
+    ViewBag.Title = "getWriter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Writer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.WriterID)
+        @Html.TextBoxFor(m => m.WriterID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.WriterName)
+        @Html.TextBoxFor(m => m.WriterName, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Update Writer</button>
+    </div>
+}
+

@@ -1,0 +1,30 @@
+﻿@using CME4414.Models;
+@model List<Borrow>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Borrowed Book</th>
+        <th>Borrower User</th>
+        <th>Borrow Start Date</th>
+        <th>Reading Situation</th>
+    </tr>
+    <tbody>
+        @foreach (var borrow in Model)
+        {
+        <tr>
+            <td>@borrow.BookID</td>
+            <td>@borrow.UserID</td>
+            <td>@borrow.BorrowDate</td>
+            <td>@borrow.IsRead</td>
+            <td><a href="/Borrow/getBorrow/@borrow.BookID" class="btn btn-success">UPDATE</a></td>
+            <td><a href="/Borrow/Delete/@borrow.BookID" class="btn btn-danger">DELETE</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Borrow/newBorrow/" class="btn btn-primary">Add New Borrowing Match</a>
+

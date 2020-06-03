@@ -1,0 +1,15 @@
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\BookDataAccess.dll.config
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\BookDataAccess.dll
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\BookDataAccess.pdb
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\source\repos\CME4414\BookDataAccess\obj\Debug\BookDataAccess.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\CME4414\BookDataAccess\obj\Debug\BookDataAccess.csproj.CopyComplete
+C:\Users\hp\source\repos\CME4414\BookDataAccess\obj\Debug\BookDataAccess.dll
+C:\Users\hp\source\repos\CME4414\BookDataAccess\obj\Debug\BookDataAccess.pdb
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hp\source\repos\CME4414\BookDataAccess\bin\Debug\System.Net.Http.Formatting.xml

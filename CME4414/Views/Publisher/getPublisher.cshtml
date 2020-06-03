@@ -1,0 +1,20 @@
+﻿@model CME4414.Models.Publisher
+@{
+    ViewBag.Title = "getPublisher";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Publisher", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.PublisherID)
+        @Html.TextBoxFor(m => m.PublisherID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.PublisherName)
+        @Html.TextBoxFor(m => m.PublisherName, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Update Publisher</button>
+    </div>
+}
+

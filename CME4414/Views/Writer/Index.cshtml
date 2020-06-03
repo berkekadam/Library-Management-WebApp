@@ -1,0 +1,26 @@
+﻿@using CME4414.Models;
+@model List<Writer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Writer ID</th>
+        <th>Writer Name</th>
+    </tr>
+    <tbody>
+        @foreach (var writer in Model)
+        {
+            <tr>
+                <td>@writer.WriterID</td>
+                <td>@writer.WriterName</td>
+                <td><a href="/Writer/getWriter/@writer.WriterID" class="btn btn-success">UPDATE</a></td>
+                <td><a href="/Writer/Delete/@writer.WriterID" class="btn btn-danger">DELETE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Writer/newWriter/" class="btn btn-primary">Add Writer</a>
+

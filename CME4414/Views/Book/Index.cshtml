@@ -1,0 +1,68 @@
+﻿@using CME4414.Models;
+@model List<Book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>BookID</th>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Writer</th>
+            <th>Publisher</th>
+            <th>Release Date</th>
+            <th>Page No</th>
+            <th>Description</th>
+            <th>Donator</th>
+            <th>ImgLink</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.BookID</td>
+                <td>@book.BookName</td>
+                <td>@book.Genre</td>
+                <td>@book.Writer.WriterName</td>
+                <td>@book.Publisher.PublisherName</td>
+                <td>@book.ReleaseDate</td>
+                <td>@book.PageNumber</td>
+                <td>@book.Description</td>
+                <td>@book.User.Name</td>
+                <td><img src="@Url.Content(book.Img_Link)" width="150" height="250" /></td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td><a href="/Book/getBook/@book.BookID" class="btn btn-success">UPDATE</a></td>
+                    <td><a href="/Book/Delete/@book.BookID" class="btn btn-danger">DELETE</a></td>
+                }
+                @if (User.IsInRole("User"))
+                {
+                    <td><button class="btn btn-warning">BORROW REQUEST</button></td>
+
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))*@
+
+@if (User.IsInRole("Admin"))
+{
+    <a href="/Book/newBook/" class="btn btn-primary">Add Book</a>
+}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+<script>
+    $('#tbl1').DataTable();
+</script>

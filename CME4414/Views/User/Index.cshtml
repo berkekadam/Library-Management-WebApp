@@ -1,0 +1,32 @@
+﻿@using CME4414.Models;
+@model List<User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>User ID</th>
+        <th>User Email</th>
+        <th>User Password</th>
+        <th>User Address</th>
+        <th>User Role</th>
+
+    </tr>
+    <tbody>
+        @foreach (var user in Model)
+        {
+        <tr>
+            <td>@user.UserID</td>
+            <td>@user.Email</td>
+            <td>@user.Password</td>
+            <td>@user.FullAddress</td>
+            <td>@user.Role</td>
+            <td><a href="/User/getUser/@user.UserID" class="btn btn-success">UPDATE</a></td>
+            <td><a href="/User/Delete/@user.UserID" class="btn btn-danger">DELETE</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/User/newUser/" class="btn btn-primary">Add User</a>

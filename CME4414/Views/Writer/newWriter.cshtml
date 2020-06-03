@@ -1,0 +1,20 @@
+﻿@model CME4414.Models.Writer
+@{
+    ViewBag.Title = "newWriter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <form class="form-group" method="post">
+        @*<div>
+            <label>Writer Name</label>
+            <input type="text" class="form-control" name="WriterName" />
+        </div>*@
+        <div>
+            <label>Writer Name</label>
+        @Html.TextBoxFor(m=>m.WriterName,new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.WriterName,"",new {@style="color:red" })
+        </div>
+        <div><button class="btn btn-info">Add Writer</button></div>
+    </form>
+ 
+

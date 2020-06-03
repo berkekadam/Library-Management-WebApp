@@ -1,0 +1,17 @@
+﻿@model List<ApiProject.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Books from Web Api</h2>
+<ol>
+    @foreach(var book in Model)
+    {
+    <li>
+        @string.Format("{0} - {1} - {2} - {3}", book.BookID,book.BookName,book.Publisher.PublisherName,book.Writer.WriterName)
+    </li>
+    }
+    
+</ol>
